@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget {
     int i = 50;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Catalog Bar"),
+        title: Text("Catalog App"),
       ),
       body: Center(
         child: Container(
