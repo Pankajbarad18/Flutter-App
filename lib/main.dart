@@ -1,6 +1,6 @@
 import 'package:app/Pages/loginpage.dart';
+import 'package:app/utils/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'Pages/homepage.dart';
 
@@ -15,14 +15,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       themeMode: ThemeMode.light,
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.deepPurple,
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
+      debugShowCheckedModeBanner:
+          false, //so aftere completion please flase it.. if false then side upper debug logo will be erase
       darkTheme: ThemeData(brightness: Brightness.dark),
       routes: {
-        "/": (context) => LoginPage(),
-        "/home": (context) => HomePage(),
-        "/login": (context) => LoginPage(),
+        "/": (context) => HomePage(),
+        MyRoutes.home: (context) => HomePage(),
+        MyRoutes.login: (context) => LoginPage(),
       },
     );
   }
