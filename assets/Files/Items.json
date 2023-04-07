@@ -2,67 +2,67 @@
     "products": [
         {
             "id": 1,
-            "name": "iPhone 12 Pro",
-            "desc": "Apple iPhone 12th generation",
-            "price": 999,
+            "name": "Nike Gymnastics Shoe",
+            "desc":"Nike Court Legacy",
+            "price": 90,
             "color": "#33505a",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc"
+            "image": "https://m.media-amazon.com/images/I/61jp8XJDAHL._AC_UX695_.jpg"
         },
         {
             "id": 2,
-            "name": "Pixel 5",
-            "desc": "Google Pixel phone 5th generation",
-            "price": 699,
+            "name": "PUMA Golf Shoe",
+            "desc": "Sporty yet refined",
+            "price": 54,
             "color": "#00ac51",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd0JhwLvm_uLDLc-la7hK9WyVpe9naJFcebKfhcICiq2KtvXDePNAU_9QO06LPcQ0K0fLByc7m&usqp=CAc"
+            "image": "https://m.media-amazon.com/images/I/71JfYUA2kmL._AC_UX695_.jpg"
         },
         {
             "id": 3,
-            "name": "M1 Macbook Air",
-            "desc": "Apple Macbook air with apple silicon",
-            "price": 1099,
+            "name": "Nike Running Shoe",
+            "desc": "The Nike Revolution 5 ",
+            "price": 95,
             "color": "#e0bfae",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMOMstwtmLnjFb3NHiDJ_kcQnueNVH-rv_3ps96HZmXlFumKWaiBqq_L4Uoyx3iFiNTrXNEbyB&usqp=CAc"
+            "image": "https://m.media-amazon.com/images/I/61bK9mhAGML._AC_UX695_.jpg"
         },
         {
             "id": 4,
-            "name": "Playstation 5",
-            "desc": "Sony Playstation 5th generation",
-            "price": 500,
+            "name": "PUMA Sneaker",
+            "desc": "Our Archive Football Icon:Super Liga",
+            "price": 57,
             "color": "#544ee4",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMOMstwtmLnjFb3NHiDJ_kcQnueNVH-rv_3ps96HZmXlFumKWaiBqq_L4Uoyx3iFiNTrXNEbyB&usqp=CAc"
+            "image": "https://m.media-amazon.com/images/I/71PGuJhQ+6L._AC_UX695_.jpg"
         },
         {
             "id": 5,
-            "name": "Airpods Pro",
-            "desc": "Apple Aipods Pro 1st generation",
-            "price": 200,
+            "name": "Nike Cross Trainer",
+            "desc": "Tailored for bodyweight workouts",
+            "price": 105,
             "color": "#e3e4e9",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQROEs084z65psoo06zYl5R0tUzywOVKVQZzmzqCj3PDP1vVJTWv3gGwGMFENSy4qV4n7sEQjE&usqp=CAc"
+            "image": "https://m.media-amazon.com/images/I/71jDjaFd2cL._AC_UX575_.jpg"
         },
         {
             "id": 6,
-            "name": "iPad Pro",
-            "desc": "Apple iPad Pro 2020 edition",
-            "price": 799,
+            "name": "PUMA Evo Golf Shoe",
+            "desc": "The engendered mesh bootie construction upper wraps",
+            "price": 63,
             "color": "#f73984",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNzUeRQ5uH7E3hpECib8qxdhfHv6SnUGT7mOsew_xiOoqRR7ZpdH-TQ4J6-HuIEfqHimYyPXWH&usqp=CAc"
+            "image": "https://m.media-amazon.com/images/I/81xXDjojYKS._AC_UX575_.jpg"
         },
         {
             "id": 7,
-            "name": "Galaxy S21 Ultra",
-            "desc": "Samsung Galaxy S21 Ultra 2021 edition",
-            "price": 1299,
+            "name": "Reebok Sneakers",
+            "desc": "Club C Revenge Pride Sneakers",
+            "price": 75,
             "color": "#1c1c1c",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT_PZcc0wicVYR992s5QCIDLYy8t-z-9kibTUdWZBN2sd86aaqdAJfhvxAwZNWV9wfdzDikpr1&usqp=CAc"
+            "image": "https://m.media-amazon.com/images/I/81yHAt-4lML._AC_UY695_.jpg"
         },
         {
             "id": 8,
-            "name": "Galaxy S21",
-            "desc": "Samsung Galaxy S21 2021 edition",
-            "price": 899,
+            "name": "Lamincoa Shoes",
+            "desc": "The Lamincoa is comfortable for people",
+            "price": 89,
             "color": "#7c95eb",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBNHd7FwarbxA1xdMFt24KazjcR4dWPH_t_T5dz4YNK1s7rJAQ8gOIuR_NRw6eeiQgFhbZ9sAN&usqp=CAc"
+            "image": "https://m.media-amazon.com/images/I/81ptmZ3vZrL._AC_UY575_.jpg"
         }
     ]
 }
