@@ -2,7 +2,16 @@
 import 'dart:convert';
 
 class Model {
-  static List<Item> products=[];
+
+  static final catModel = Model._internal();
+  Model._internal();
+
+  factory Model() => catModel;
+  static List<Item> products = [];
+
+  Item getbyId(int id) =>
+      products.firstWhere((element) => element.id == id, orElse: null);
+  Item getbyPos(int pos) => products[pos];
 }
 
 class Item {

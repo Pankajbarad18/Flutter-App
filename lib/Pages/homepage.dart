@@ -1,8 +1,10 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, deprecated_member_use
 import 'dart:convert';
 
 import 'package:app/Pages/CatalogList.dart';
 import 'package:app/Pages/Header.dart';
+import 'package:app/utils/routes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -40,7 +42,17 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     // final fakeitem = List.generate(25, (index) => Model.products[0]);
     return Scaffold(
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: context.theme.buttonColor,
+        onPressed: () {
+          Navigator.pushNamed(context, MyRoutes.cart);
+        },
+        child: Icon(
+          CupertinoIcons.cart,
+          color: Colors.white,
+        ),
+      ),
       body: SafeArea(
         child: Container(
           padding: Vx.m32,
@@ -59,4 +71,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
