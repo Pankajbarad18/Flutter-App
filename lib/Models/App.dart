@@ -1,12 +1,7 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, file_names, null_closures
 import 'dart:convert';
 
 class Model {
-
-  static final catModel = Model._internal();
-  Model._internal();
-
-  factory Model() => catModel;
   static List<Item> products = [];
 
   Item getbyId(int id) =>

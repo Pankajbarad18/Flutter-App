@@ -1,12 +1,15 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 import 'package:app/Pages/CartPage.dart';
+import 'package:app/Pages/Store.dart';
 import 'package:app/Pages/loginpage.dart';
 import 'package:app/utils/Widgets/themes.dart';
 import 'package:app/utils/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 import 'Pages/homepage.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(VxState(store: MyStore(), interceptors: [], child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

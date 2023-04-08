@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, unnecessary_null_comparison, avoid_print, prefer_const_constructors
+
 import 'package:app/Models/App.dart';
 import 'package:flutter/material.dart';
 

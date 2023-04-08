@@ -1,8 +1,10 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first, deprecated_member_use
+// ignore_for_file: public_member_api_docs, sort_constructors_first, deprecated_member_use, prefer_const_constructors, unnecessary_null_comparison, prefer_const_literals_to_create_immutables, no_leading_underscores_for_local_identifiers
 import 'dart:convert';
 
+import 'package:app/Pages/CartModel.dart';
 import 'package:app/Pages/CatalogList.dart';
 import 'package:app/Pages/Header.dart';
+import 'package:app/Pages/Store.dart';
 import 'package:app/utils/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +12,6 @@ import 'package:flutter/services.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'package:app/Models/App.dart';
-import 'package:app/utils/Widgets/themes.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -22,7 +23,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     loadData();
   }
@@ -40,18 +40,27 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final _cart = (VxState.store as MyStore).cart;
     // final fakeitem = List.generate(25, (index) => Model.products[0]);
     return Scaffold(
       backgroundColor: context.canvasColor,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: context.theme.buttonColor,
-        onPressed: () {
-          Navigator.pushNamed(context, MyRoutes.cart);
-        },
-        child: Icon(
-          CupertinoIcons.cart,
-          color: Colors.white,
-        ),
+      floatingActionButton: VxBuilder(
+        mutations: {AddMutation, RemoveMutation},
+        builder: (context, store, status) => FloatingActionButton(
+          backgroundColor: context.theme.buttonColor,
+          onPressed: () {
+            Navigator.pushNamed(context, MyRoutes.cart);
+          },
+          child: Icon(
+            CupertinoIcons.cart,
+            color: Colors.white,
+          ),
+        ).badge(
+            size: 20,
+            count: _cart.items.length,
+            color: Vx.red500,
+            textStyle:
+                TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
       ),
       body: SafeArea(
         child: Container(
