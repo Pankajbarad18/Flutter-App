@@ -17,6 +17,6 @@ class CatImage extends StatelessWidget {
         .color(MyTheme.creamColor)
         .make()
         .p16()
-        .w40(context);
+        .wPCT(context: context, widthPCT: context.isMobile ? 40 : 20);
   }
 }

@@ -1,5 +1,6 @@
-// ignore_for_file: deprecated_member_use, file_names
+// ignore_for_file: deprecated_member_use, file_names, prefer_const_constructors
 
+import 'package:app/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -13,20 +14,37 @@ class CatalogList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      itemCount: Model.products.length,
-      itemBuilder: (context, index) {
-        final catalog = Model.products[index];
-        return InkWell(
-            onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => HomeDetailPage(catalog: catalog),
-                )),
-            child: CatalogItem(catalog: catalog));
-      },
-    );
+    return !context.isMobile
+        ? GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, crossAxisSpacing: 20.0),
+            shrinkWrap: true,
+            itemCount: Model.products.length,
+            itemBuilder: (context, index) {
+              final catalog = Model.products[index];
+              return InkWell(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomeDetailPage(catalog: catalog),
+                      )),
+                  child: CatalogItem(catalog: catalog));
+            },
+          )
+        : ListView.builder(
+            shrinkWrap: true,
+            itemCount: Model.products.length,
+            itemBuilder: (context, index) {
+              final catalog = Model.products[index];
+              return InkWell(
+                  onTap: () => context.vxNav.push(
+                      Uri(
+                          path: MyRoutes.homedetail,
+                          queryParameters: {"id": catalog.id.toString()}),
+                      params: catalog),
+                  child: CatalogItem(catalog: catalog));
+            },
+          );
   }
 }
 
@@ -40,32 +58,42 @@ class CatalogItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var children2 = [
+      Hero(
+          tag: Key(catalog.id.toString()),
+          child: CatImage(image: catalog.image)),
+      Expanded(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            catalog.name.text.lg.color(context.accentColor).make(),
+            catalog.desc.text.sm.textStyle(context.captionStyle).bold.make(),
+            6.heightBox,
+            ButtonBar(
+              alignment: MainAxisAlignment.spaceBetween,
+              buttonPadding: Vx.mH8,
+              children: [
+                "\$${catalog.price}".text.xl.bold.make(),
+                AddtoCart(catalog: catalog)
+              ],
+            ).pOnly(right: 8)
+          ],
+        ).p(context.isMobile ? 0 : 16),
+      )
+    ];
     return VxBox(
-        child: Row(
-      children: [
-        Hero(
-            tag: Key(catalog.id.toString()),
-            child: CatImage(image: catalog.image)),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              catalog.name.text.lg.color(context.accentColor).make(),
-              catalog.desc.text.sm.textStyle(context.captionStyle).bold.make(),
-              6.heightBox,
-              ButtonBar(
-                alignment: MainAxisAlignment.spaceBetween,
-                buttonPadding: Vx.mH8,
-                children: [
-                  "\$${catalog.price}".text.xl.bold.make(),
-                  AddtoCart(catalog: catalog)
-                ],
-              ).pOnly(right: 8)
-            ],
-          ),
-        )
-      ],
-    )).color(context.cardColor).roundedLg.square(130).make().py16();
+            child: context.isMobile
+                ? Row(
+                    children: children2,
+                  )
+                : Column(
+                    children: children2,
+                  ))
+        .color(context.cardColor)
+        .roundedLg
+        .square(130)
+        .make()
+        .py16();
   }
 }
